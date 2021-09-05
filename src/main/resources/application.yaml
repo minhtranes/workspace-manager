@@ -9,7 +9,7 @@ spring:
       url: http://localhost:8089
       instance:
          service-path: /
-         prefer-ip: false
+         prefer-ip: true
 logging:
    file:
       name: ./logs/${spring.application.name}.log
@@ -49,9 +49,10 @@ management:
 
 # CLEAN THE OBSOLETED FILES
 file-management:
+   files: C:\application
    reporter:
       enabled: true
-      schedule: '* * 0/15 * *'
+      schedule: '0/5 * * * * *'
       rules[size]:
          larger-than: 5MB
       rules[obsolete]:
